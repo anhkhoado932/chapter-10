@@ -2,9 +2,6 @@ const express = require("express");
 const mongodb = require("mongodb");
 const amqp = require('amqplib');
 
-//
-// Starts the microservice.
-//
 async function startMicroservice(dbHost, dbName, rabbitHost, port) {
     const client = await mongodb.MongoClient.connect(dbHost, { useUnifiedTopology: true });  // Connects to the database.
     const db = client.db(dbName);
